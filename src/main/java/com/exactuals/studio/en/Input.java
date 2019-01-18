@@ -10,15 +10,4 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = { "com.exactuals.indexer" })
 public class Input {
 
-  @Autowired
-  private IndexRouterService indexRouterService;
-
-  @Autowired
-  RestHighLevelClient elasticSearchClient;
-
-  String realm = paymentMessage.getRealm();
-  String orgId = paymentMessage.getOrganizationId();
-  final IndexDestination destination =
-    this.indexRouterService.determineSearchDestination(SearchType.PAYLOAD_PACKGE, realm, orgId);
-  destination.getReadPath() // This is the index you can query from.
 }
